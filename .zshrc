@@ -44,7 +44,11 @@ function git_branch_name()
 			s+='$';
 		fi;
 	fi;
-    echo " ${purple}$branch ${reset}${bold}[${red}$s${reset}${bold}]${unbold}"
+		if [ -z "$s" ];
+		  then changes="";
+		  else changes="${reset}${bold}[${red}$s${reset}${bold}]${unbold}";
+		fi
+    echo " ${purple}$branch $changes"
   fi
 }
 
