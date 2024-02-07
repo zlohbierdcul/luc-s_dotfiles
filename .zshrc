@@ -1,6 +1,21 @@
 # Enable Prompt Substitution
 setopt prompt_subst
 
+
+# enable color support of ls and also add handy aliases
+
+alias ls='ls --color'
+alias dir='dir --color'
+alias vdir='vdir --color'
+alias grep='grep --color'
+alias fgrep='fgrep --color'
+alias egrep='egrep --color'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 # Colors
 newline=$'\n';
 bold='%B';
@@ -68,13 +83,14 @@ fi;
 
 # Set the terminal title and prompt.
 PS1="
-╭─⠇⠥⠉ "; 
+╭─⠇⠥⠉ "; # User icon and arrow start
 PS1+="${userStyle} %n"; # username
-PS1+="${white}  ";
+PS1+="${white}  "; # host Icon
 PS1+="${hostStyle} %m"; # host
-PS1+="${white} ";
+PS1+="${white} "; # Dir icon
 PS1+="${blue} %~"; # working directory full path
 PS1+='${reset} $(git_branch_name)'; # Git repository details
 PS1+="${white}
-╰─ᐳ   ${reset}";
+╰─ᐳ   ${reset}"; # arrow end
+
 export PS1;
