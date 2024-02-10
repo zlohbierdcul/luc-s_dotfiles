@@ -1,9 +1,11 @@
 # Enable Prompt Substitution
 setopt prompt_subst
 
+# Import NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # enable color support of ls and also add handy aliases
-
 alias ls='ls --color'
 alias dir='dir --color'
 alias vdir='vdir --color'
@@ -15,6 +17,10 @@ alias egrep='egrep --color'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# Aliases
+alias ..='cd ..'
+alias ....='cd ../..'
 
 # Colors
 newline=$'\n';
